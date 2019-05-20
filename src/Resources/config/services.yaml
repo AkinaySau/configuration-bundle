@@ -1,0 +1,22 @@
+services:
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    Sau\Bundle\ConfigurationBundle\:
+        resource: '../../*'
+        exclude: '../../{DependencyInjection,Entity}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    Sau\Bundle\ConfigurationBundle\Controller\:
+        resource: '../../Controller'
+        tags: ['controller.service_arguments']
+
+    sau.configurations.form_collector:
+        class: Sau\Bundle\ConfigurationBundle\Configuration\FormChain
+        public: true
+imports:
+    - { resource: './services/sonata_admin.yaml' }

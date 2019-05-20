@@ -1,0 +1,19 @@
+{
+	"name": "sau/configuration-bundle",
+	"description": "Bundle for simple config",
+	"type": "symfony-bundle",
+	"license": "MIT",
+	"keywords": [
+		"sau",
+		"symfony"
+	],
+	"authors": [
+		{
+			"name": "Akinay Sau",
+			"email": "akinaysau@gmail.com",
+			"homepage": "http://sauri.pw"
+		}
+	],
+	"minimum-stability": "stable",
+	"require": {}
+}
